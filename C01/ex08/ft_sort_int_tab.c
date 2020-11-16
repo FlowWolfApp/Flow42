@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:12:48 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 16:12:48 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/16 16:21:02 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	while (i < size)
 	{
 
-		if (tab[i] < tab[i + 1])
+		if (tab[i] > tab[i + 1])
 		{
 			ft_swap(&tab[i], &tab[i + 1]);
 			i = 0;
@@ -49,16 +49,19 @@ int		main(void)
 	i = 0;
 	size = 5;
 	tab[0] = 1;
-	tab[1] = 2;
-	tab[2] = 3;
-	tab[3] = 4;
-	tab[4] = 5;
+	tab[1] = 4;
+	tab[2] = 2;
+	tab[3] = 9;
+	tab[4] = 3;
+	printf("Tab init\n");
 	while (i < size)
 	{
 		printf("tab[%d] = %d\n", i, tab[i]);
 		i++;
 	}
 	ft_sort_int_tab(tab, size);
+
+	printf("\nTab final\n");
 	i = 0;
 	while (i < size)
 	{
