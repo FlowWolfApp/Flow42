@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:43:43 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 13:45:27 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/16 13:50:17 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int     main(void)
     b = 6;
     printf("a = %d, b = %d\n", a, b);
     ft_swap(&a, &b);
-    printf("a = %d, b = %d", a, b);
+    printf("a = %d, b = %d.", a, b);
 }
