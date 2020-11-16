@@ -1,35 +1,35 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 12:14:48 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 12:47:35 by fspano           ###   ########lyon.fr   */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_print_numbers.c								 :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: fspano <fspano@student.42lyon.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2020/11/16 12:14:48 by fspano			#+#	#+#			 */
+/*   Updated: 2020/11/16 14:52:06 by fspano		   ###   ########lyon.fr   */
+/*																			*/
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write (1, &c, 1);
+	write(1, &c, 1);
 }
 
-void    ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
-    int a;
-    a = 0;
+	int a;
 
-    while (a < 10)
-    {
-        ft_putchar(a + 48);
-        a++;
-    }
+	a = 0;
+	while (a < 10)
+	{
+		ft_putchar(a + 48);
+		a++;
+	}
 }
 
-int     main(void)
+int main(void)
 {
-    ft_print_numbers();
+	ft_print_numbers();
 }
