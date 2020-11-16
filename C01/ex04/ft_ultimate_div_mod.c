@@ -30,7 +30,7 @@ int		main(void)
 	a = 25;
 	b = 7;
 	printf("a = %d, b = %d\n", a, b);
-	ft_div_mod(&a, &b);
+	ft_ultimate_div_mod(&a, &b);
 	printf("a = %d, b = %d\n", a, b);
 	return (0);
 }
