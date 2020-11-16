@@ -18,11 +18,11 @@ void	ft_ft(int *nbr)
 	*nbr = 42;
 }
 
-int 	main()
+int		main(void)
 {
 	int alfa;
-	alfa = 2;
 
+	alfa = 2;
 	printf("%d\n", alfa);
 	ft_ft(&alfa);
 	printf("%d\n", alfa);
