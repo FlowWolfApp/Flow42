@@ -26,7 +26,7 @@ int		ft_strlen(char *str)
 int main(void)
 {
 	int len;
-	char str[] = "Hello tout le monde !"
+	char str[] = "Hello tout le monde !";
 
 	len = ft_strlen(str);
 	printf("Longueur de la chaine str = %d", len);
