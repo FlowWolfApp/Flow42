@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:19:00 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 13:19:00 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/16 13:25:07 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int     main()
     alfa = 2;
 
     printf("%d\n", alfa);
-    ft_ft(alfa);
+    ft_ft(&alfa);
     printf("%d\n", alfa);
 }
