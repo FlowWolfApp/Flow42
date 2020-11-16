@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:14:48 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 12:14:48 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/16 12:47:35 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void    ft_putchar(char c)
 
 void    ft_print_numbers(void)
 {
-    int a
+    int a;
     a = 0;
 
     while (a < 10)
     {
-        ft_putchar(a);
+        ft_putchar(a + 48);
         a++;
     }
 }
