@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: fspano <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 11:15:50 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 11:15:50 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/10/09 16:02:33 by fspano            #+#    #+#             */
+/*   Updated: 2020/10/22 14:10:11 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void    main(void)
+int main()
 {
-    ft_putchar('a');
+	char alfa = 'e';
+	ft_putchar(alfa);
 }
