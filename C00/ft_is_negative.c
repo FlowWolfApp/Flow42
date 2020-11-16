@@ -23,15 +23,4 @@ void    ft_is_negative(int n)
         ft_putchar('P');
     else if (n < 0)
         ft_putchar('N');
-    else
-    {
-        ft_putchar('X');
-    }
-}
-
-int     main(int argc, char *argv[])
-{
-    if (argc = 2)
-        ft_is_negative(argv[2]);
-    return (0);
 }
