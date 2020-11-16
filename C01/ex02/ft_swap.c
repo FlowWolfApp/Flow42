@@ -22,7 +22,7 @@ void	ft_swap(int *a, int *b)
 	*b = swp;
 }
 
-int     main(void)
+int		main(void)
 {
 	int a;
 	int b;
