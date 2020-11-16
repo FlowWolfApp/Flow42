@@ -30,6 +30,6 @@ int     main(void)
     a = 4;
     b = 6;
     printf("a = %d, b = %d", a, b);
-    ft_swap(a, b);
+    ft_swap(&a, &b);
     printf("a = %d, b = %d", a, b);
 }
