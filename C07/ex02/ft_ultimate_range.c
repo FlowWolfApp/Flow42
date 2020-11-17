@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 13:22:02 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/17 13:22:02 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/17 13:33:26 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int		main(void)
 	i = 0;
 	min = 3;
 	max = 7;
-	printf("return of ft_ultimate_range : %d\n", ft_ultimate_range(tab, min, max));
-	if (i >= 1)
+	printf("return of ft_ultimate_range : %d\n", ft_ultimate_range(&tab, min, max));
+	if (ft_ultimate_range(&tab, min, max) >= 1)
 	{
 		while (i < max - min)
 		{
