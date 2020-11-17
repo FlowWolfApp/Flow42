@@ -6,11 +6,11 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 10:47:38 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/17 10:47:38 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/17 10:58:53 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unsitd.h>
+#include <unistd.h>
 #include <stdio.h>
 
 int		ft_atoi(char *str)
@@ -27,7 +27,7 @@ int		ft_atoi(char *str)
 	while(str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			negative -= 1;
+			negative = -negative;
 		i++;
 	}
 	while(str[i] && str[i] >= '0' && str[i] <= '9')
@@ -38,10 +38,11 @@ int		ft_atoi(char *str)
 	return (res * negative);
 }
 
-int		maint(void)
+int		main(void)
 {
-	char num[] = "-1578624";
+	char num[] = "   ++-++--1578624";
 
-	printf("My number in char : %s", num);
+	printf("My number in char : %s\n", num);
 	printf("My number in deci : %d", ft_atoi(num));
+	return (0);
 }
