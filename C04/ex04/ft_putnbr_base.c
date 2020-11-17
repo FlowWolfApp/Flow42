@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 20:10:18 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/17 11:00:23 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/17 11:01:35 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main()
 	int i = 100;
 	char base[] = "0123";
 
-	printf("Nombre : %d\nBase : %s\n", i, base);
-	printf("Traduit : \n");
+	printf("Number : %d\nBase : %s\n", i, base);
+	printf("Translated : \n");
 	ft_putnbr_base(i, base);
 }
