@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:43:46 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/17 12:43:46 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/17 13:20:04 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,24 @@ int		*ft_range(int min, int max)
 	return (tab);
 }
 
-int		main(int argc, char *argv[])
+int		main(void)
 {
 	int i;
 	int size;
 	int *tab_ret;
+	int min;
+	int max;
 
+	min = 3;
+	max = 7;
 	i = 0;
-	if(argc != 3)
-		return (1);
-	if (argv[1] < argv[2])
-	{
-		tab_ret = ft_range(argv[1], argv[2]);
-		size = argv[2] - argv[1];
-	}
-	else
-	{
-		tab_ret = ft_range(argv[2], argv[1]);
-		size = argv[1] - argv[2];
-	}
+	tab_ret = ft_range(min, max);
+	size = max - min;
+	if (size < 1)
+		return(0);
 	while (i < size)
 	{
-		printf("%d", tab_ret[i]);
+		printf("%d\n", tab_ret[i]);
 		i++;
 	}
 	return (0);
