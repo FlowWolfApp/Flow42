@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 09:46:39 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/17 09:46:39 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/17 10:06:50 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		main(void)
 	char s1[] = "Yo la troupe !";
 	char s2[] = "Ya la troupe !";
 
-	printf("%c", ft_strcmp(s1, s2));
+	printf("%d", ft_strcmp(s1, s2));
 }
