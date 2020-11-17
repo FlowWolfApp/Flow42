@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:45:09 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/17 11:45:09 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/17 11:56:00 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_sort_str_tab(char **str, int nb_elmt)
 		if (ft_strcmp(str[i - 1], str[i]) > 0)
 		{
 			ft_swap(str, i);
+			i = 1;
 		}
 	}
 }
@@ -60,8 +61,6 @@ void	ft_swap(char **str, int i)
 	tmp_str = str[i - 1];
 	str[i - 1] = str[i];
 	str[i] = tmp_str;
-	i = 1;
-
 }
 
 int		ft_strcmp(char *s1, char *s2)
