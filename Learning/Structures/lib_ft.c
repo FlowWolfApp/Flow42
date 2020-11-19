@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lib_ft.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 11:00:48 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/19 09:51:10 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/19 09:52:49 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/19 09:57:02 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_HEADER_H
-# define FT_HEADER_H
+#include "header.h"
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct perso perso;
-struct perso
+int		ft_malloc_perso_name(char *perso_name)
 {
-	int		age;
-	int		lifes;
-	int		size;
-	char	*name;
-};
+	int *pnt;
 
-typedef struct coordonnates coordonnates;
-struct coordonnates
-{
-	int		x;
-	int		y;
-	int		z;
-};
-
-
-# endif
+	pnt = 0;
+	if (!(perso_name = (char *)malloc(sizeof(char) * 100)))
+		return (0);
+	else
+		return (1);
+}
