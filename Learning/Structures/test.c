@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:01:43 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/19 10:01:51 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/19 10:24:14 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,16 @@ int		main(int argc, char *argv[])
 	coordonnates point;
 	perso player[2];
 	int i;
+	int *pnt = 0;
 
 	i = 0;
-	if (ft_init_perso_name(&flow) == 1)
+	if (ft_init_perso_name(&flow) == 0)
 	{
-		printf("Error\n")
+		printf("Error\n");
 		return (0);
 	}
 	flow.age = 30;
 	flow.lifes = 1;
-	/*if (!(flow.name = (char *)malloc(sizeof(char) * 100)))
-		return (0);*/
-
 	flow.name = "Flow";
 	flow.size = 178;
 
@@ -42,16 +40,16 @@ int		main(int argc, char *argv[])
 
 	while (i < 2)
 	{
-		if (ft_init_perso_name(&player[i]) == 1)
+		if (ft_init_perso_name(&player[i]) == 0)
 		{
-			printf("Error\n")
+			printf("Error\n");
 			return (0);
 		}
-		printf("What is your name P%d ?", i + 1);
+		printf("What is your name P%d ? ", i + 1);
 		scanf("%s", player[i].name);
-		printf("What is your age P%d ?", i + 1);
+		printf("What is your age P%d ? ", i + 1);
 		scanf("%d", &player[i].age);
-		printf("What is your size P%d ?", i + 1);
+		printf("What is your size P%d ? ", i + 1);
 		scanf("%d", &player[i].size);
 		i++;
 	}
