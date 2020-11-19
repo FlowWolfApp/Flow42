@@ -21,10 +21,16 @@ int		main(int argc, char *argv[])
 	int i;
 
 	i = 0;
+	if (ft_init_perso_name(&flow) == 1)
+	{
+		printf("Error\n")
+		return (0);
+	}
 	flow.age = 30;
 	flow.lifes = 1;
-	if (!(flow.name = (char *)malloc(sizeof(char) * 100)))
-		return (0);
+	/*if (!(flow.name = (char *)malloc(sizeof(char) * 100)))
+		return (0);*/
+
 	flow.name = "Flow";
 	flow.size = 178;
 
@@ -36,8 +42,11 @@ int		main(int argc, char *argv[])
 
 	while (i < 2)
 	{
-		if (!(player[i].name = (char *)malloc(sizeof(char) * 100)))
+		if (ft_init_perso_name(&player[i]) == 1)
+		{
+			printf("Error\n")
 			return (0);
+		}
 		printf("What is your name P%d ?", i + 1);
 		scanf("%s", player[i].name);
 		printf("What is your age P%d ?", i + 1);

@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-int		ft_malloc_perso_name(char *perso_name)
+int		ft_init_perso_name(char *perso_name)
 {
 	int *pnt;
 
