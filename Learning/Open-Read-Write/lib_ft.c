@@ -35,3 +35,15 @@ void	ft_putnbr(int nb)
 	else
 		ft_putchar(nbr + '0');
 }
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
