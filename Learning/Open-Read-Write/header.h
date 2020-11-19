@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:00:48 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/19 09:51:10 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/19 11:14:02 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
-
+#include "lib_ft.c"
 
 
 # endif

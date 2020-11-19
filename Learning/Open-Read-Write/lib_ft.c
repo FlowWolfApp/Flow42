@@ -6,16 +6,11 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 09:52:49 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/19 10:24:52 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/19 11:12:38 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-int		ft_init_perso_name(perso *perso_name)
-{
-	
-}
 
 void	ft_putchar(char c)
 {
