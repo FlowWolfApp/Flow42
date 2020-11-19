@@ -38,6 +38,10 @@ int		main(int argc, char *argv[])
 	
 	printf("Ton nom est %s\n", flow.name);
 
+	Volume musique;
+
+	musique = MEDIUM;
+
 	while (i < 2)
 	{
 		if (ft_init_perso_name(&player[i]) == 0)

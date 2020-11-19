@@ -34,5 +34,10 @@ struct coordonnates
 	int		z;
 };
 
+typedef enum volume volume;
+enum volume
+{
+	MUTE, LOW = 15, MEDIUM = 50, HIGH = 85, MAX = 100
+};
 
 # endif
