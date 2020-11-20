@@ -52,7 +52,7 @@ int					tolower(int c);
 
 char				*strchr(const char *s, int c);
 char				*strrchr(const char *s, int c);
-//size_			strlcat(char *dst, const char *src, size_t size);
+/*size_t*/			strlcat(char *dst, const char *src, size_t size);
 char				*strnstr(const char *big, const char *little, size_t len);
 
 void				*calloc(size_t nmemb, size_t size);

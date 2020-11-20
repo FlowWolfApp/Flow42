@@ -24,9 +24,9 @@
 
 SRCS		= ft_atoi.c ft_strdup.c ft_strlcpy.c ft_strncmp.c
 
-NAME		= libft.a
-
 OBJS		= $(SRC:.c=.o)
+
+NAME		= libft.a
 
 CC			= gcc
 
