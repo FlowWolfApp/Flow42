@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:18:21 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/16 15:18:21 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 14:01:36 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_putstr(char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
-	{	
+	while (str[i])
+	{
 		ft_putchar(str[i]);
 		i++;
 	}
