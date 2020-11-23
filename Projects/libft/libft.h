@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 13:09:56 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 14:02:54 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 16:02:21 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include "libft_bonus.h"
 
 // FUNCTIONS DECLARATION DONE
-
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-void				ft_putnbr(int nb);
-void				ft_swap(int *a, int *b);
 
 int					ft_strncmp(char *s1, char *s2, unsigned int n);
 unsigned int		ft_strlcpy(char *dest, char *src, unsigned int size);
 int					ft_strlen(char *s1);
 int					ft_atoi(char *str);
 
-char 				*ft_strdup(char *src);
+char				*ft_strdup(char *src);
 
 // FUNCTIONS DECLARATION - TO BE DONE
 
-void				*memset (void *s, int c, size_t n);
-void				bzero(void *s, size_t n);
+void				*ft_memset (void *s, int c, size_t n);
+/*void				bzero(void *s, size_t n);
 void				*memcpy(void *dest, const void *src, size_t n);
 void				*memccpy(void *dest, const void *src, int c, size_t n);
 void				*memmove(void *dest, const void *src, size_t n);
@@ -81,5 +77,6 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+*/
 
 #endif

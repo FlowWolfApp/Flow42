@@ -6,17 +6,17 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:37:50 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 14:02:18 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 15:54:53 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char 	*ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-	int i;
-	char *str;
-	char *pnt;
+	int		i;
+	char	*str;
+	char	*pnt;
 
 	if (!(str = malloc(ft_strlen(src) * sizeof(char) + 1)))
 	{

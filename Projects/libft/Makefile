@@ -6,11 +6,11 @@
 #    By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 12:45:40 by fspano            #+#    #+#              #
-#    Updated: 2020/11/20 12:45:40 by fspano           ###   ########lyon.fr    #
+#    Updated: 2020/11/23 15:53:56 by fspano           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-#SRCS		= memset bzero memcpy memccpy memmove memchr memcmp strlen isalpha
+#SRCS		= memset bzero memcpy memccpy memmove memchr memcmp isalpha
 #isdigit isalnum isascii isprint toupper tolower srtchr strrchr
 #strlcat strnstr
 #calloc
@@ -22,11 +22,12 @@
 #ft_lstnew ft_lstadd_front ft_lstsize ft_lstadd_back ft_lstdelone ft_lstclear
 #ft_lstiter ft_lstmap
 
-SRCS		= ft_atoi.c ft_strdup.c ft_strlcpy.c ft_strncmp.c
+SRCS		= ft_atoi.c ft_strdup.c ft_strlcpy.c ft_strncmp.c ft_strlen.c \
+ft_memset.c
 
 NAME		= libft.a
 
-OBJS		= $(SRC:.c=.o)
+OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
 
@@ -34,19 +35,14 @@ RM			= rm -f
 
 CFLAGS		= -Wall -Wextra -Werror
 
+AR			= ar -rcs
 
-
-LDFLAGS		= -L.
-LDLIBS		= -lft
-INC = ./inc/
+INC = .
 ${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
+			${AR} ${NAME} ${OBJS}
 			ranlib $(NAME)
-%.o: %.c
-		$(CC) -I. -o $@ -c $? $(CFLAGS)
-
-
-
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INC}
 
 all:		${NAME}
 
@@ -58,4 +54,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		clean clean
+.PHONY:		all clean fclean re

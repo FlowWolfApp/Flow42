@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 10:38:05 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 15:29:07 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/23 14:11:54 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/23 15:59:04 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	long nbr;
+	size_t	i;
+	char	*str;
 
-	nbr = nb;
-	if (nbr < 0)
+	i = 0;
+	str = s;
+	while (i < n)
 	{
-		ft_putchar('-');
-		nbr *= -1;
+		str[i] = c;
+		i++;
 	}
-	if (nbr >= 10)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + '0');
+	return (s);
 }

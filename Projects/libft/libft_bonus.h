@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   libft_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 10:38:05 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 15:29:07 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/23 15:24:10 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/23 15:25:30 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_BONUS_H
+# define LIBFT_BONUS_H
 
-void	ft_putnbr(int nb)
-{
-	long nbr;
+void				ft_putchar(char c);
+void				ft_putstr(char *str);
+void				ft_putnbr(int nb);
+void				ft_swap(int *a, int *b);
 
-	nbr = nb;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr *= -1;
-	}
-	if (nbr >= 10)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-		ft_putchar(nbr + '0');
-}
+#endif
