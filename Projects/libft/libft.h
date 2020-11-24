@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 13:09:56 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 17:27:35 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 17:12:36 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,29 @@ int					ft_atoi(char *str);
 
 char				*ft_strdup(char *src);
 
-// FUNCTIONS DECLARATION - TO BE DONE
-
 void				*ft_memset (void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
-/*void				*memchr(const void *s, int c, size_t n);
-int					memcmp(const void *s1, const void *s2, size_t n);
+void				*ft_memchr(const void *s, int c, size_t n);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
-int					isalpha(int c);
-int					isdigit(int c);
-int					isalnum(int c);
-int					isascii(int c);
-int					isprint(int c);
+int					ft_isalpha(int c);
+int					ft_isdigit(int c);
+int					ft_isalnum(int c);
+int					ft_isascii(int c);
+int					ft_isprint(int c);
 
-int					toupper(int c);
-int					tolower(int c);
+int					ft_toupper(int c);
+int					ft_tolower(int c);
 
-char				*strchr(const char *s, int c);
-char				*strrchr(const char *s, int c);
-//size_			strlcat(char *dst, const char *src, size_t size);
-char				*strnstr(const char *big, const char *little, size_t len);
+char				*ft_strchr(const char *s, int c);
+char				*ft_strrchr(const char *s, int c);
+/*size_t			ft_strlcat(char *dst, const char *src, size_t size);
+char				*ft_strnstr(const char *big, const char *little, size_t len);
 
-void				*calloc(size_t nmemb, size_t size);
+void				*ft_calloc(size_t nmemb, size_t size);
 
 // FUNCTION SUPP - TO BE DONE
 

@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 11:26:16 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 12:51:05 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/24 10:08:12 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/24 12:36:41 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_str_is_alpha(char *str)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
+	size_t	i;
+	char	*str;
 
+	str = (char*)s;
 	i = 0;
-	if (str[i] == 0)
-		return (1);
-	while (str[i])
+	while (i < n)
 	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-		{
-			return (0);
-		}
+		if (str[i] == (char)c)
+			return (str + i);
 		i++;
 	}
-	return (1);
+	return (NULL);
 }

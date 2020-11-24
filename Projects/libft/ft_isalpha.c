@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 11:26:16 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 12:51:05 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/24 12:53:07 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/24 13:14:01 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_str_is_alpha(char *str)
+int	ft_isalpha(int c)
 {
-	int i;
-
-	i = 0;
-	if (str[i] == 0)
-		return (1);
-	while (str[i])
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (c);
+	else
+		return (0);
 }

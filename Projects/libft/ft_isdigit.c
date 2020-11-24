@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 11:26:16 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 12:51:05 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/24 12:55:25 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/24 13:14:24 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_str_is_alpha(char *str)
+int	ft_isdigit(int c)
 {
-	int i;
-
-	i = 0;
-	if (str[i] == 0)
-		return (1);
-	while (str[i])
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	if ((c >= '0' && c <= '9'))
+		return (c);
+	else
+		return (0);
 }
