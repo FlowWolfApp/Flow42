@@ -6,11 +6,11 @@
 #    By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 12:45:40 by fspano            #+#    #+#              #
-#    Updated: 2020/11/23 15:53:56 by fspano           ###   ########lyon.fr    #
+#    Updated: 2020/11/23 17:28:59 by fspano           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-#SRCS		= memset bzero memcpy memccpy memmove memchr memcmp isalpha
+#SRCS		= memchr memcmp isalpha
 #isdigit isalnum isascii isprint toupper tolower srtchr strrchr
 #strlcat strnstr
 #calloc
@@ -23,7 +23,7 @@
 #ft_lstiter ft_lstmap
 
 SRCS		= ft_atoi.c ft_strdup.c ft_strlcpy.c ft_strncmp.c ft_strlen.c \
-ft_memset.c
+ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c
 
 NAME		= libft.a
 
