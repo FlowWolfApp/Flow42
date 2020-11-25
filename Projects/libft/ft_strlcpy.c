@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 11:06:25 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 13:35:19 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 16:12:19 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 
 	i = 0;
 	a = 0;
+	if (!dest || !src)
+		return (0);
 	while (src[i])
 		i++;
 	if (size == 0)

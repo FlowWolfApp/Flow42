@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:49:06 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/25 12:18:07 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 17:23:22 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int		ft_strlen(char *s1)
 {
@@ -25,43 +26,49 @@ int		ft_strlen(char *s1)
 	return (size);
 }
 
-size_t	ft_ft(char *dst, const char *src, size_t size)
+static int	ft_atoi_neg(int neg, char *str, int *i)
 {
-	size_t i;
-	size_t j;
+	neg = 1;
+	while (str[*i] == '-' || str[*i] == '+')
+	{
+		if (str[*i] == '-')
+			neg = -neg;
+		(*i)++;
+	}
+	return (neg);
+}
+
+int			ft_atoi(char *str)
+{
+	int		i;
+	size_t	res;
+	int		negative;
+	int		j;
 
 	i = 0;
-	if (size == 0)
-		return (ft_strlen((char *)src));
-	while (dst[i] != '\0' && i < size)
+	j = 0;
+	res = 0;
+	while (str[i] && ((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
 		i++;
-	j = i;
-	while (src[i - j] != '\0' && i < size - 1)
+	negative = ft_atoi_neg(negative, str, &i);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		dst[i] = src[i - j];
-		//printf("la : %c\n", dst[i]);
+		res = res * 10 + str[i] - '0';
 		i++;
+		j++;
+		if (j >= 18 && negative == -1)
+			return (0);
+		if (j >= 18 && negative == 1)
+			return (-1);
 	}
-	if (j < size)
-		dst[i] = '\0';
-	return (j + ft_strlen((char *)src));
+	return (res * negative);
 }
 
 int	main(void)
 {
-	char	s1[500];
-	char	s2[500];
-	int		n;
+	char	*n = "-1234jknergr gerjg erjhg5678901451";
 
-	n = 13;
-	strcpy(s1, "bonjour");
-	strcpy(s2, "alfa");
-	printf("Retour strlcat \"%zu\"\n", strlcat(s1, s2, n));
-	//printf("s1 = %s\ns2 = %s\n\n", s1, s2);
-	strcpy(s1, "bonjour");
-	strcpy(s2, "alfa");
-	//printf("s1 = %s\ns2 = %s\n\n", s1, s2);
-	printf("Retour ft_ft %zu\n\n", ft_ft(s1, s2, n));
-	//printf("s1 = %s\ns2 = %s\n\n", s1, s2);
+	printf("Retour    atoi %d\n", atoi(n));
+	printf("Retour ft_atoi %d\n\n", ft_atoi(n));
 	return (0);
 }
