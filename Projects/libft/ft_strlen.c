@@ -6,18 +6,18 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 13:13:14 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 15:28:43 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 13:12:12 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(char *s1)
+int		ft_strlen(char *str)
 {
 	int		size;
 
 	size = 0;
-	while (s1[size])
+	while (str[size])
 		size++;
 	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:49:06 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 18:02:40 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 12:18:07 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,54 +25,43 @@ int		ft_strlen(char *s1)
 	return (size);
 }
 
-char	*ft_ft(const char *s, int c)
+size_t	ft_ft(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	char	*str;
+	size_t i;
+	size_t j;
 
-	str = (char *)s;
-	i = ft_strlen(str);
-	printf("%d\n", i);
-	while (str[i] != c)
-		i--;
-	if (str[i] == '\0')
-		return (NULL);
-	return (&str[i]);
+	i = 0;
+	if (size == 0)
+		return (ft_strlen((char *)src));
+	while (dst[i] != '\0' && i < size)
+		i++;
+	j = i;
+	while (src[i - j] != '\0' && i < size - 1)
+	{
+		dst[i] = src[i - j];
+		//printf("la : %c\n", dst[i]);
+		i++;
+	}
+	if (j < size)
+		dst[i] = '\0';
+	return (j + ft_strlen((char *)src));
 }
 
 int	main(void)
 {
-	char	*s1;
-	char	*s2;
+	char	s1[500];
+	char	s2[500];
 	int		n;
 
-	n = 98;
-	s1 = "bobnjour";
-	s2 = "t\0";
-	printf("Retour strrchr \"%s\"\n", strrchr(s1, n));
-	printf("Retour ft_ft %s\n", ft_ft(s1, n));
+	n = 13;
+	strcpy(s1, "bonjour");
+	strcpy(s2, "alfa");
+	printf("Retour strlcat \"%zu\"\n", strlcat(s1, s2, n));
+	//printf("s1 = %s\ns2 = %s\n\n", s1, s2);
+	strcpy(s1, "bonjour");
+	strcpy(s2, "alfa");
+	//printf("s1 = %s\ns2 = %s\n\n", s1, s2);
+	printf("Retour ft_ft %zu\n\n", ft_ft(s1, s2, n));
+	//printf("s1 = %s\ns2 = %s\n\n", s1, s2);
 	return (0);
 }
-
-/*
-	size_t	i;
-	size_t	last_occ;
-	char	*str;
-
-	if (!s)
-		return (NULL);
-	i = 0;
-	last_occ = 0;
-	str = (char *)s;
-	while (str[i])
-	{
-		if (str[i] == c)
-			last_occ = i;
-		i++;
-	}
-	if (c == '\0' && str[i] == c && ft_strlen(str) > 0)
-		return ("");
-	if (last_occ == 0 && str[0] != c)
-		return (NULL);
-	return (&str[last_occ]);
-	*/

@@ -6,12 +6,11 @@
 #    By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 12:45:40 by fspano            #+#    #+#              #
-#    Updated: 2020/11/24 17:14:03 by fspano           ###   ########lyon.fr    #
+#    Updated: 2020/11/25 13:37:51 by fspano           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-#SRCS		= strlcat strnstr
-#calloc
+#SRCS		= calloc
 #ft_substr ft_strjoin ft_strtrim ft_split ft_itoa ft_strmapi ft_putchar_fd
 #ft_putstr_fd ft_putendl_fd ft_putnbr_fd
 
@@ -23,7 +22,8 @@
 SRCS		= ft_atoi.c ft_strdup.c ft_strlcpy.c ft_strncmp.c ft_strlen.c	\
 ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c	\
 ft_memcmp.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
-ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c
+ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strlcat.c ft_strnstr.c\
+ft_calloc.c
 
 NAME		= libft.a
 

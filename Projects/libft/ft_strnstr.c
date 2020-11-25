@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 16:06:27 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/25 13:10:17 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/25 12:56:49 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/25 13:29:40 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *src, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	ft_memset(src, '\0', n);
+	size_t	i;
+	size_t	j;
+	size_t	max;
+
+	i = 0;
+	while (str[i] && i < n)
+		i++;
+	max = i;
+	i = 0;
+	j = 0;
+	if (to_find[0] == 0)
+		return ((char *)str);
+	while (str[i] && i < max)
+	{
+		if (to_find[j] == str[i])
+			j++;
+		i++;
+		if (to_find[j] == '\0')
+			return ((char *)&str[i - j]);
+		if (to_find[j] != str[i])
+			j = 0;
+	}
+	return (NULL);
 }

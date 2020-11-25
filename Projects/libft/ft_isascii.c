@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 13:19:03 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 13:29:29 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 11:17:15 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if ((unsigned char)c >= 0 && (unsigned char)c < 128)
+	if (c >= 0 && c < 128)
 		return (1);
 	else
 		return (0);
