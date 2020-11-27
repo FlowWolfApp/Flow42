@@ -6,61 +6,47 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:06:00 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 18:18:46 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 18:52:07 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int         ft_getstart(const char *s1, const char *set)
+static unsigned int	is_to_trim(char c, char const *set)
 {
-	size_t  len;
-	size_t  i;
-
-	len = ft_strlen((char *)s1);
-	i = 0;
-	while (i < len)
+	while (*set)
 	{
-		if (ft_strchr(set, s1[i]) == 0)
-			break ;
-		i++;
+		if (c == *set)
+			return (1);
+		set++;
 	}
-	return (i);
+	return (0);
 }
 
-int         ft_getend(const char *s1, const char *set)
+char				*ft_strtrim(char const *s1, char const *set)
 {
-	size_t  len;
-	size_t  i;
-
-	len = ft_strlen((char *)s1);
+	int				i;
+	unsigned int	str_size;
+	char			*str_start;
+	char			*str_end;
+	char			*str;
+	
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
-	while (i < len)
-	{
-		if (ft_strchr(set, s1[len - i - 1]) == 0)
-			break ;
+	while (s1[i] && is_to_trim(s1[i], set))
 		i++;
-	}
-	return (len - i);
-}
-
-char        *ft_strtrim(char const *s1, char const *set)
-{ 
-	int     start;
-	int     end;
-	char    *newstr;
-
-	if (s1 == NULL)
+	str_start = (char *)&s1[i];
+	i = ft_strlen((char *)s1) - 1;
+	while (i >= 0 && is_to_trim(s1[i], set))
+		i--;
+	str_end = (char *)&s1[i];
+	if (!*s1 || str_end == str_start)
+		str_size = 2;
+	else
+		str_size = str_end - str_start + 2;
+	if (!(str = malloc(sizeof(char) * str_size)))
 		return (NULL);
-	if (set == NULL)
-		return (ft_strdup((char *)s1));
-	start = ft_getstart(s1, set);
-	end = ft_getend(s1, set);
-	if (start >= end)
-		return (ft_strdup(""));
-	newstr = (char *)malloc(sizeof(char) * (end - start + 1) + 1);
-	if (newstr == NULL)
-		return (NULL);
-	ft_strlcpy(newstr, (char *)(s1 + start), end - start + 1);
-	return(newstr);
+	ft_strlcpy(str, str_start, str_size);
+	return (str);
 }
