@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   itoa.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:49:06 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 19:51:43 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 19:41:51 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ static	int	ft_itoa_size(int n)
 	int		size;
 
 	size = 0;
-	printf("%d\n", size);
 	if (n == 0)
-		size = 1;
-
-	printf("%d\n", size);
+		return (1);
 	if (n < 0)
 	{
 		size = 1;
@@ -53,9 +50,6 @@ char		*ft_itoa(int n)
 		return (NULL);
 	if (n == -2147483648)
 		return ("-2147483648");
-	if (n == 0)
-		str[0] = '0';
-	printf("%s\n", str);
 	if (n < 0)
 	{
 		str[i] = '-';
@@ -78,7 +72,7 @@ int			main(void)
 {
 	int nb;
 
-	nb = 2147483647;
+	nb = -2147483648;
 	printf("nombre en int : %d\n", nb);
 	printf("nombre en chr : %s\n", ft_itoa(nb));
 }
