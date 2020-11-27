@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:36:42 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 15:36:42 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 16:31:03 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	count_word(char *str, char c)
 	size_t	i;
 	size_t	count;
 
-	i = 0:
+	i = 0;
 	count = 0;
 	while (str[i])
 	{
@@ -29,8 +29,8 @@ static int	count_word(char *str, char c)
 			while (str[i] && !(str[i] == c))
 				i++;
 		}
-		return (count);
 	}
+	return (count);
 }
 
 static char	*malloc_word(char *str, char c)
@@ -48,7 +48,7 @@ static char	*malloc_word(char *str, char c)
 	while (str[i] && !(str[i] == c))
 	{
 		word[i] = str[i];
-		i++
+		i++;
 	}
 	word[i] = '\0';
 	return (word);	
@@ -62,22 +62,24 @@ char		**ft_split(char const *s, char c)
 	size_t	size_split;
 
 	i = 0;
+	if (!s || !c)
+		return (NULL);
 	index_word = 0;
 	size_split = count_word((char *)s, c);
 	if (!(split = (char **)malloc(sizeof(char *) * (size_split + 1))))
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] && str[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		if (str[i] && !(str[i] == c))
+		if (s[i] && !(s[i] == c))
 		{
-			split[index_word] = malloc_word(&str[i]);
+			split[index_word] = malloc_word((char *)&s[i], c);
 			index_word++;
-			while (str[i] && !(str[i] == c))
+			while (s[i] && !(s[i] == c))
 				i++;
 		}
-		split[index_word] = 0;
-		return (split);
 	}
+	split[index_word] = 0;
+	return (split);
 }
