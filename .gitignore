@@ -8,7 +8,9 @@
 /*.exe
 /*.out
 /*.o
-/*.a
+/*/*/*.o
+/*/*/*.a
+/*/*/*.so
 
 # Ignoring directories
 # Both the directory itself and its contents will be ignored.

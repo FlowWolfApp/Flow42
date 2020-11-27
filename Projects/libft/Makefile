@@ -6,7 +6,7 @@
 #    By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 12:45:40 by fspano            #+#    #+#              #
-#    Updated: 2020/11/25 15:16:10 by fspano           ###   ########lyon.fr    #
+#    Updated: 2020/11/27 11:25:13 by fspano           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,10 +40,15 @@ INC = .
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
 			ranlib $(NAME)
+
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INC}
+			${CC} ${CFLAGS} -c -fPIC $< -o ${<:.c=.o}
 
 all:		${NAME}
+
+so:			${NAME}
+			ar -x ${NAME}
+			${CC} -shared *.o -o libft.so
 
 clean:
 			${RM} ${OBJS}

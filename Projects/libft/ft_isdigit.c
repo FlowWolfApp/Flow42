@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 12:55:25 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 13:14:24 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 11:29:50 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isdigit(int c)
 {
 	if ((c >= '0' && c <= '9'))
-		return (c);
+		return (1);
 	else
 		return (0);
 }

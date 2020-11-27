@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 13:16:48 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/24 13:18:27 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 11:32:18 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
-		return (c);
+		return (1);
 	else
 		return (0);
 }
