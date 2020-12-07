@@ -15,12 +15,13 @@
 static int	ft_atoi_neg(int neg, char *str, int *i)
 {
 	neg = 1;
-	while (str[*i] == '-' || str[*i] == '+')
+	if (str[*i] == '-')
 	{
-		if (str[*i] == '-')
-			neg = -neg;
+		neg = -neg;
 		(*i)++;
 	}
+	if (str[*i] == '+')
+		(*i)++;
 	return (neg);
 }
 
