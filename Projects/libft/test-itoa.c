@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:49:06 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 19:51:43 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 10:59:30 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,61 +16,56 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-static	int	ft_itoa_size(int n)
+static long		ft_itoa_size(int n)
 {
-	int		size;
+	long		size;
 
-	size = 0;
-	printf("%d\n", size);
 	if (n == 0)
-		size = 1;
-
-	printf("%d\n", size);
+		return (1);
+	size = 0;
 	if (n < 0)
 	{
 		size = 1;
 		n = -n;
 	}
-	while (n >= 1)
+	while (n != 0)
 	{
-		n = n / 10;
+		n /= 10;
 		size++;
 	}
-
-	printf("%d\n", size);
-	return (size);
+	return (size++);
 }
 
-char		*ft_itoa(int n)
+static int		ft_neg(int n)
 {
-	char	*str;
-	size_t	i;
-	size_t	size;
-
-	size = ft_itoa_size(n);
-	i = 0;
-	if (!((str = (char *)malloc(sizeof(char) * size + 1))))
-		return (NULL);
-	if (n == -2147483648)
-		return ("-2147483648");
-	if (n == 0)
-		str[0] = '0';
-	printf("%s\n", str);
 	if (n < 0)
+		return (1);
+	return (0);
+}
+
+char			*ft_itoa(int n)
+{
+	long		nbr;
+	long		size;
+	char		*str;
+
+	nbr = n;
+	size = ft_itoa_size(nbr);
+
+	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	str[size] = '\0';
+	size--;
+	if (nbr < 0)
+		nbr = -nbr;
+	while (size >= 0)
 	{
-		str[i] = '-';
-		n = -n;
-		i++;
+		str[size] = (nbr % 10) + '0';
+		size--;
+		nbr /= 10;
 	}
-	if (n == 0)
-		str = "0";
-	while (n >= 1)
-	{
-		str[size - i] = (n % 10) + '0';
-		n = n / 10;
-		i++;
-	}
-	str[i] = '\0';
+	if (ft_neg(n))
+		str[0] = '-';
 	return (str);
 }
 
@@ -78,7 +73,7 @@ int			main(void)
 {
 	int nb;
 
-	nb = 2147483647;
+	nb = -2147483648;
 	printf("nombre en int : %d\n", nb);
 	printf("nombre en chr : %s\n", ft_itoa(nb));
 }

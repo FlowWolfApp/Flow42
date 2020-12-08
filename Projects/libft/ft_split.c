@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:36:42 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 16:31:03 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/08 12:05:45 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	*malloc_word(char *str, char c)
 		i++;
 	}
 	word[i] = '\0';
-	return (word);	
+	return (word);
 }
 
 char		**ft_split(char const *s, char c)

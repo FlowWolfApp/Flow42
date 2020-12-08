@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 13:06:00 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 18:52:07 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/12/07 11:01:43 by fspano            #+#    #+#             */
+/*   Updated: 2020/12/08 13:12:25 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char				*ft_strtrim(char const *s1, char const *set)
 	char			*str_start;
 	char			*str_end;
 	char			*str;
-	
+
 	if (!s1 || !set)
 		return (NULL);
 	i = 0;

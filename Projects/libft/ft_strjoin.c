@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 14:54:38 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/25 16:06:35 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/08 12:23:16 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	j = -1;
-	while (i < size_s1_s2)
+	while (s1[i] != '\0')
 	{
-		while (s1[i] != '\0')
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		while (s2[++j] != '\0')
-			str[i++] = s2[j];
+		str[i] = s1[i];
+		i++;
 	}
+	while (s2[++j] != '\0')
+		str[i++] = s2[j];
 	str[size_s1_s2] = '\0';
 	return (str);
 }

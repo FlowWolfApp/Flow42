@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   test-strnstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 12:56:49 by fspano            #+#    #+#             */
-/*   Updated: 2020/12/08 13:11:23 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/24 10:49:06 by fspano            #+#    #+#             */
+/*   Updated: 2020/12/08 13:11:06 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 char			*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
@@ -36,4 +40,13 @@ char			*ft_strnstr(const char *str, const char *to_find, size_t n)
 		printf("i = %d\nj = %d\n", i, j);	
 	}
 	return (NULL);
+}
+
+int			main(void)
+{
+	char	*s1 = "aaabc";
+	char	*s2 = "aabc";
+	int		n = 10;
+
+	printf("On renvoit : %s\n", ft_strnstr(s1, s2, n));
 }

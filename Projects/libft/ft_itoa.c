@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:54:46 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/27 19:57:43 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 11:05:08 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ char			*ft_itoa(int n)
 
 	nbr = n;
 	size = ft_itoa_size(nbr);
-
 	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	str[size] = '\0';
