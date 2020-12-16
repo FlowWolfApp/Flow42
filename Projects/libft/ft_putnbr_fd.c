@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 14:54:38 by fspano            #+#    #+#             */
-/*   Updated: 2020/12/08 12:23:16 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/28 10:43:33 by fspano            #+#    #+#             */
+/*   Updated: 2020/11/28 13:51:07 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void			ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	size_t	size_s1_s2;
-	size_t	i;
-	size_t	j;
+	unsigned int	nb;
 
-	if (!s1 || !s2)
-		return (NULL);
-	size_s1_s2 = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	if (!(str = malloc(sizeof(char) * (size_s1_s2 + 1))))
-		return (NULL);
-	i = 0;
-	j = -1;
-	while (s1[i] != '\0')
+	if (n < 0)
 	{
-		str[i] = s1[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		n *= -1;
 	}
-	while (s2[++j] != '\0')
-		str[i++] = s2[j];
-	str[size_s1_s2] = '\0';
-	return (str);
+	nb = (unsigned int)n;
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:55:04 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 15:55:07 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/28 09:58:50 by fspano            #+#    #+#             */
+/*   Updated: 2020/12/07 11:03:55 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swap(int *a, int *b)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int swp;
-
-	swp = *a;
-	*a = *b;
-	*b = swp;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

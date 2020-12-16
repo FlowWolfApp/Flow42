@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 14:54:38 by fspano            #+#    #+#             */
-/*   Updated: 2020/12/08 12:23:16 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/11/28 09:07:39 by fspano            #+#    #+#             */
+/*   Updated: 2020/12/07 11:04:12 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
-	size_t	size_s1_s2;
-	size_t	i;
-	size_t	j;
+	int		i;
 
-	if (!s1 || !s2)
+	if (!s || !f)
 		return (NULL);
-	size_s1_s2 = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	if (!(str = malloc(sizeof(char) * (size_s1_s2 + 1))))
+	if (!(str = (char*)malloc(sizeof(char) * (ft_strlen((char *)s) + 1))))
 		return (NULL);
 	i = 0;
-	j = -1;
-	while (s1[i] != '\0')
+	while (s[i])
 	{
-		str[i] = s1[i];
-		i++;
+		str[i] = f(i, s[i]);
+		++i;
 	}
-	while (s2[++j] != '\0')
-		str[i++] = s2[j];
-	str[size_s1_s2] = '\0';
+	str[i] = '\0';
 	return (str);
 }

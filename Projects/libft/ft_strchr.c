@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:18:34 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/25 13:11:34 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:36:43 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *src, int c)
 
 	i = 0;
 	str = (char *)src;
-	while (str[i] != c)
+	while (str[i] != (char)c)
 	{
 		if (str[i] == '\0')
 			return (NULL);

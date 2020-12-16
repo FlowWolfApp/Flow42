@@ -6,25 +6,26 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 10:47:38 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/25 17:25:07 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 16:18:55 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_atoi_neg(int neg, char *str, int *i)
+static int	ft_atoi_neg(int neg, const char *str, int *i)
 {
 	neg = 1;
-	while (str[*i] == '-' || str[*i] == '+')
+	if (str[*i] == '-')
 	{
-		if (str[*i] == '-')
-			neg = -neg;
+		neg = -neg;
 		(*i)++;
 	}
+	if (str[*i] == '+')
+		(*i)++;
 	return (neg);
 }
 
-int			ft_atoi(char *str)
+int			ft_atoi(const char *str)
 {
 	int		i;
 	size_t	res;

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_bonus.h                                      :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 15:24:10 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/23 15:25:30 by fspano           ###   ########lyon.fr   */
+/*   Created: 2020/12/16 11:44:41 by fspano            #+#    #+#             */
+/*   Updated: 2020/12/16 16:11:22 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BONUS_H
-# define LIBFT_BONUS_H
+#include "libft.h"
 
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-void				ft_putnbr(int nb);
-void				ft_swap(int *a, int *b);
-
-#endif
+t_list	*ft_lstlast(t_list *lst)
+{
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}

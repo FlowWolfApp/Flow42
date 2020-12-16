@@ -6,13 +6,13 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 13:13:14 by fspano            #+#    #+#             */
-/*   Updated: 2020/11/25 13:12:12 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 11:25:16 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(char *str)
+int		ft_strlen(const char *str)
 {
 	int		size;
 
