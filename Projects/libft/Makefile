@@ -6,19 +6,12 @@
 #    By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/20 12:45:40 by fspano            #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2020/12/16 16:03:44 by fspano           ###   ########lyon.fr    #
+#    Updated: 2020/12/16 16:35:53 by fspano           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 
-=======
-#    Updated: 2020/11/28 13:52:17 by fspano           ###   ########lyon.fr    #
-#                                                                              #
-# **************************************************************************** #
-
->>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 SRCS		= ft_atoi.c ft_strdup.c ft_strlcpy.c ft_strncmp.c ft_strlen.c	\
 ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c	\
 ft_memcmp.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
@@ -45,25 +38,12 @@ AR			= ar rcs
 
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
-<<<<<<< HEAD
 
 all:		${NAME}
 
 
 %.o:%.c		${HEADER}
 			${CC} ${FLAGS} -c $< -o $@
-=======
-			ranlib $(NAME)
-
-.c.o:
-			${CC} ${CFLAGS} -c -fPIC $< -o ${<:.c=.o}
-
-all:		${NAME}
-
-so:			${NAME}
-			ar -x ${NAME}
-			${CC} -shared *.o -o libft.so
->>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 
 clean:
 			${RM} ${OBJS} ${BONUS_OBJS}
