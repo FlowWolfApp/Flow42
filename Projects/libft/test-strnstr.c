@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   test-strnstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 12:56:49 by fspano            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2020/12/15 11:45:51 by fspano           ###   ########lyon.fr   */
-=======
-/*   Updated: 2020/12/08 13:11:23 by fspano           ###   ########lyon.fr   */
->>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
+/*   Created: 2020/11/24 10:49:06 by fspano            #+#    #+#             */
+/*   Updated: 2020/12/08 13:11:06 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 char			*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
@@ -22,13 +22,8 @@ char			*ft_strnstr(const char *str, const char *to_find, size_t n)
 	size_t	j;
 
 	i = 0;
-<<<<<<< HEAD
-	if (to_find[0] == 0)
-		return ((char *)str);
-=======
 	/*if (to_find[0] == 0)
 		return ((char *)str);*/
->>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 	while (str[i] && i < n)
 	{
 		j = 0;
@@ -36,19 +31,22 @@ char			*ft_strnstr(const char *str, const char *to_find, size_t n)
 		{
 			i++;
 			j++;
-<<<<<<< HEAD
-=======
 			printf("i = %d\nj = %d\nn = %d\n", i, j, n);
->>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 		}
 		if (to_find[j] == '\0' && (i - j) < n)
 			return ((char *)str + (i - j));
 		i -= j;
 		i++;
-<<<<<<< HEAD
-=======
 		printf("i = %d\nj = %d\n", i, j);	
->>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 	}
 	return (NULL);
+}
+
+int			main(void)
+{
+	char	*s1 = "aaabc";
+	char	*s2 = "aabc";
+	int		n = 10;
+
+	printf("On renvoit : %s\n", ft_strnstr(s1, s2, n));
 }

@@ -6,7 +6,11 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 13:09:56 by fspano            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/12/16 11:41:43 by fspano           ###   ########lyon.fr   */
+=======
+/*   Updated: 2020/12/07 11:03:23 by fspano           ###   ########lyon.fr   */
+>>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +21,7 @@
 # include <unistd.h>
 # include <string.h>
 
+<<<<<<< HEAD
 typedef	struct	s_list
 {
 	void			*content;
@@ -27,6 +32,12 @@ int				ft_strncmp(char *s1, char *s2, unsigned int n);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 int				ft_strlen(const char *str);
 int				ft_atoi(const char *str);
+=======
+int				ft_strncmp(char *s1, char *s2, unsigned int n);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+int				ft_strlen(char *str);
+int				ft_atoi(char *str);
+>>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 char			*ft_strdup(char *src);
 void			*ft_memset(void *src, int c, size_t n);
 void			ft_bzero(void *src, size_t n);
@@ -57,6 +68,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+<<<<<<< HEAD
 void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 void			ft_lstclear(t_list **lst, void (*del)(void*));
@@ -66,5 +78,7 @@ t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 t_list			*ft_lstnew(void *content);
 int				ft_lstsize(t_list *lst);
+=======
+>>>>>>> febb55b881c578345b4b9cb99ac6095f43cb4381
 
 #endif
