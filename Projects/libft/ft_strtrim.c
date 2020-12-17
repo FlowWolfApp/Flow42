@@ -6,7 +6,7 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 11:01:43 by fspano            #+#    #+#             */
-/*   Updated: 2020/12/08 13:12:25 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:24:07 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ char				*ft_strtrim(char const *s1, char const *set)
 	while (i >= 0 && is_to_trim(s1[i], set))
 		i--;
 	str_end = (char *)&s1[i];
-	if (!*s1 || str_end == str_start)
-		str_size = 2;
+	if (!*s1 || str_end <= str_start)
+		str_size = 1;
 	else
 		str_size = str_end - str_start + 2;
 	if (!(str = malloc(sizeof(char) * str_size)))

@@ -6,48 +6,37 @@
 /*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 10:47:38 by fspano            #+#    #+#             */
-/*   Updated: 2020/12/16 16:18:55 by fspano           ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 16:42:26 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_atoi_neg(int neg, const char *str, int *i)
+int	ft_atoi(const char *str)
 {
-	neg = 1;
-	if (str[*i] == '-')
-	{
-		neg = -neg;
-		(*i)++;
-	}
-	if (str[*i] == '+')
-		(*i)++;
-	return (neg);
-}
-
-int			ft_atoi(const char *str)
-{
+	long	nb;
+	int		sign;
 	int		i;
-	size_t	res;
-	int		negative;
-	int		j;
 
 	i = 0;
-	j = 0;
-	res = 0;
-	negative = 0;
-	while (str[i] && ((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
+	nb = 0;
+	sign = 1;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	negative = ft_atoi_neg(negative, str, &i);
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
-		j++;
-		if (j >= 18 && negative == -1)
-			return (0);
-		if (j >= 18 && negative == 1)
-			return (-1);
+		if (str[i++] == '-')
+			sign = -1;
 	}
-	return (res * negative);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + str[i++] - '0';
+		if (nb < 0)
+		{
+			if (sign == 1)
+				return (-1);
+			return (0);
+		}
+	}
+	return ((int)(nb * sign));
 }
