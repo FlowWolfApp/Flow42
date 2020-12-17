@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaudet- <lgaudet-@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: fspano <fspano@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 10:47:47 by lgaudet-          #+#    #+#             */
-/*   Updated: 2020/12/15 15:22:36 by lgaudet-         ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:39:24 by fspano           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+//Une valeur de retour incorrecte
 
 int		get_next_char(int fd)
 {
@@ -33,7 +35,6 @@ int		get_next_char(int fd)
 	}
 	if (r == 0)
 	{
-		r = 0;
 		i = 0;
 		return (-1);
 	}
